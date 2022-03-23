@@ -1,13 +1,21 @@
 import Home from "./Pages/Home";
+import styled from "styled-components";
 
-function App() {
+const StyledBody = styled.body`
+  color: #4f5d73;
+  font-family: "Roboto", sans-serif;
+
+  body {
+    background-color: #f7f7f7;
+  }
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Home />
-      </header>
-    </div>
+    <StyledBody>
+      <Home />
+    </StyledBody>
   );
-}
+};
 
 export default App;
