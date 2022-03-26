@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const H1 = styled.div`
+export const H1 = styled.h1`
   font-size: 64px;
   font-weight: normal;
   margin: 88px 0 8px 0;
