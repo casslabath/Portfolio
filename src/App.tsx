@@ -9,7 +9,7 @@ import Connect from "./Pages/Connect";
 const StyledBody = styled.div`
   color: #4f5d73;
   font-family: "Roboto", sans-serif;
-  top: -15px;
+  top: -5px;
   position: relative;
 `;
 
