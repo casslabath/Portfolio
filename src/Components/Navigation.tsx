@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { NavigationContext } from "../Contexts/NavigationContext";
 
 const StyledNav = styled.nav`
   align-items: center;
@@ -39,15 +40,15 @@ const StyledLink = styled(Link)`
 `;
 
 const Navigation: React.FC = () => {
-  const [currentLink, setCurrentLink] = useState('home');
+  const {currentPath, setCurrentPath} = useContext(NavigationContext);
 
   return (
     <StyledNav>
       <StyledList>
-        <StyledListItem background-color={currentLink === 'home'  ? '#A9DAD0': ''}>
+        <StyledListItem background-color={currentPath === '/'  ? '#A9DAD0': ''}>
           <StyledLink 
-            className={currentLink === 'home' ? 'active-link' : ''}
-            onClick={() => setCurrentLink('home')} 
+            className={currentPath === '/' ? 'active-link' : ''}
+            onClick={() => setCurrentPath('/')} 
             to={"/"} 
           >
             Home
@@ -55,25 +56,25 @@ const Navigation: React.FC = () => {
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentLink === 'about' ? 'active-link' : ''}
+            className={currentPath === '/about' ? 'active-link' : ''}
             to={"/about"}
-            onClick={() => setCurrentLink('about')}
+            onClick={() => setCurrentPath('/about')}
           >
             About Me
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentLink === 'experience' ? 'active-link' : ''}
+            className={currentPath === '/experience' ? 'active-link' : ''}
             to={"/experience"} 
-            onClick={() => setCurrentLink('experience')}
+            onClick={() => setCurrentPath('/experience')}
           >Experience</StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentLink === 'connect' ? 'active-link' : ''}
+            className={currentPath === '/connect' ? 'active-link' : ''}
             to={"/connect"}
-            onClick={() => setCurrentLink('connect')}
+            onClick={() => setCurrentPath('/connect')}
           >Connect</StyledLink>
         </StyledListItem>
       </StyledList>

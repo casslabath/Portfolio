@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "../styles";
 import styled from "styled-components";
+import LinkButton from "../Components/LinkButton";
 
 const StyledContainer = styled.div`
   margin-left: 64px;
@@ -19,6 +20,7 @@ const Home = () => {
         <br />
         {"Software Engineer"}
       </S.H2>
+      <LinkButton path={'/connect'} text="Contact Me" />
     </StyledContainer>
   );
 };
