@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { NavigationContext } from "../Contexts/NavigationContext";
+import LinkButton from "./LinkButton";
 
 const StyledNav = styled.nav`
   align-items: center;
   background-color: #4F5D73;
   display: flex;
   height: 64px;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 64px;
 `;
 
@@ -39,11 +40,31 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const StyledLogoContainer = styled.div`
+    margin-left: 24px;
+
+    a {
+      margin-right: 8px;
+    }
+`;
+
 const Navigation: React.FC = () => {
   const {currentPath, setCurrentPath} = useContext(NavigationContext);
 
   return (
     <StyledNav>
+      <StyledLogoContainer>
+        <LinkButton 
+          logo={'/assets/github-logo.png'} 
+          alt={'Github Logo'}
+          path={'https://github.com/casslabath'} 
+        />
+        <LinkButton 
+          logo={'/assets/linkedin-logo.png'} 
+          alt={'Linkedin Logo'}
+          path={'https://www.linkedin.com/in/cassandra-labath/'} 
+        />
+      </StyledLogoContainer>
       <StyledList>
         <StyledListItem background-color={currentPath === '/'  ? '#A9DAD0': ''}>
           <StyledLink 
