@@ -6,11 +6,10 @@ import LinkButton from "./LinkButton";
 
 const StyledNav = styled.nav`
   align-items: center;
-  background-color: #4F5D73;
+  background-color: #4f5d73;
   display: flex;
   height: 64px;
   justify-content: space-between;
-  padding-right: 64px;
 `;
 
 const StyledList = styled.ul`
@@ -18,14 +17,15 @@ const StyledList = styled.ul`
   flex-direction: row;
   list-style: none;
   margin: 0;
+  min-width: 480px;
 `;
 
 const StyledListItem = styled.li`
   margin-left: 24px;
 
   .active-link {
-    position: relative; 
-    transition: background-color .5s;
+    position: relative;
+    transition: background-color 0.5s;
     background-color: #ffffff;
     border-radius: 10px;
     color: #4f5d73;
@@ -41,62 +41,67 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledLogoContainer = styled.div`
-    margin-left: 24px;
+  margin-left: 24px;
+  min-width: 116px;
 
-    a {
-      margin-right: 8px;
-    }
+  a {
+    margin-right: 8px;
+  }
 `;
 
 const Navigation: React.FC = () => {
-  const {currentPath, setCurrentPath} = useContext(NavigationContext);
+  const { currentPath, setCurrentPath } = useContext(NavigationContext);
 
   return (
     <StyledNav>
       <StyledLogoContainer>
-        <LinkButton 
-          logo={'/assets/github-logo.png'} 
-          alt={'Github Logo'}
-          path={'https://github.com/casslabath'} 
+        <LinkButton
+          logo={"/assets/github-logo.png"}
+          alt={"Github Logo"}
+          path={"https://github.com/casslabath"}
         />
-        <LinkButton 
-          logo={'/assets/linkedin-logo.png'} 
-          alt={'Linkedin Logo'}
-          path={'https://www.linkedin.com/in/cassandra-labath/'} 
+        <LinkButton
+          logo={"/assets/linkedin-logo.png"}
+          alt={"Linkedin Logo"}
+          path={"https://www.linkedin.com/in/cassandra-labath/"}
         />
       </StyledLogoContainer>
       <StyledList>
-        <StyledListItem background-color={currentPath === '/'  ? '#A9DAD0': ''}>
-          <StyledLink 
-            className={currentPath === '/' ? 'active-link' : ''}
-            onClick={() => setCurrentPath('/')} 
-            to={"/"} 
+        <StyledListItem background-color={currentPath === "/" ? "#A9DAD0" : ""}>
+          <StyledLink
+            className={currentPath === "/" ? "active-link" : ""}
+            onClick={() => setCurrentPath("/")}
+            to={"/"}
           >
             Home
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentPath === '/about' ? 'active-link' : ''}
+            className={currentPath === "/about" ? "active-link" : ""}
             to={"/about"}
-            onClick={() => setCurrentPath('/about')}
+            onClick={() => setCurrentPath("/about")}
           >
             About Me
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentPath === '/experience' ? 'active-link' : ''}
-            to={"/experience"} 
-            onClick={() => setCurrentPath('/experience')}
-          >Experience</StyledLink>
+            className={currentPath === "/experience" ? "active-link" : ""}
+            to={"/experience"}
+            onClick={() => setCurrentPath("/experience")}
+          >
+            Experience
+          </StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledLink
-            className={currentPath === '/connect' ? 'active-link' : ''}
+            className={currentPath === "/connect" ? "active-link" : ""}
             to={"/connect"}
-            onClick={() => setCurrentPath('/connect')}
-          >Connect</StyledLink>
+            onClick={() => setCurrentPath("/connect")}
+          >
+            Connect
+          </StyledLink>
         </StyledListItem>
       </StyledList>
     </StyledNav>
