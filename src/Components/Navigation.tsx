@@ -57,12 +57,12 @@ const Navigation: React.FC = () => {
       <StyledLogoContainer>
         <LinkButton
           logo={"/assets/github-logo.png"}
-          alt={"Github Logo"}
+          alt={"Github Logo Link"}
           path={"https://github.com/casslabath"}
         />
         <LinkButton
           logo={"/assets/linkedin-logo.png"}
-          alt={"Linkedin Logo"}
+          alt={"Linkedin Logo Link"}
           path={"https://www.linkedin.com/in/cassandra-labath/"}
         />
       </StyledLogoContainer>

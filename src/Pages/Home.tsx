@@ -3,9 +3,9 @@ import * as S from "../styles";
 import styled from "styled-components";
 import LinkButton from "../Components/LinkButton";
 
-const StyledContainer = styled.div`
+export const StyledContainer = styled.div`
   margin-left: 64px;
-  width: 30%;
+  width: 40%;
 `;
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
         <br />
         {"Software Engineer"}
       </S.H2>
-      <LinkButton path={'/connect'} text="Contact Me" />
+      <LinkButton path={"/connect"} text="Contact Me" />
     </StyledContainer>
   );
 };

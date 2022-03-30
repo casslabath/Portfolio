@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const H1 = styled.h1`
   font-size: 64px;
@@ -20,4 +20,5 @@ export const H2 = styled.h2`
 
 export const P = styled.h2`
   font-size: 24px;
+  font-weight: normal;
 `;
